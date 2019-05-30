@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
         BGAQRCodeUtil.setDebug(true);
+
+        startActivity(new Intent(this, TestScanActivity.class));
+        finish();
     }
 
     public void onClick(View view) {

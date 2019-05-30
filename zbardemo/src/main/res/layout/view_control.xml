@@ -6,6 +6,7 @@
     android:layout_alignParentBottom="true"
     android:padding="4dp"
     app:fl_horizontalChildGap="4dp"
+    android:visibility="gone"
     app:fl_isDistributionWhiteSpacing="true"
     app:fl_verticalChildGap="4dp">
 

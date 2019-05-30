@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     style="@style/MatchMatch">
 
     <cn.bingoogolapple.qrcode.zbar.ZBarView
@@ -20,7 +21,7 @@
         app:qrcv_isOnlyDecodeScanBoxArea="false"
         app:qrcv_isShowDefaultGridScanLineDrawable="true"
         app:qrcv_isShowDefaultScanLineDrawable="true"
-        app:qrcv_isShowLocationPoint="true"
+        app:qrcv_isShowLocationPoint="false"
         app:qrcv_isShowTipBackground="true"
         app:qrcv_isShowTipTextAsSingleLine="false"
         app:qrcv_isTipTextBelowRect="false"
@@ -31,6 +32,17 @@
         app:qrcv_toolbarHeight="56dp"
         app:qrcv_topOffset="80dp"
         app:qrcv_verticalBias="-1" />
+
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        tools:text="548468454564654848468"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content" />
 
     <include layout="@layout/toolbar" />
 

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,7 @@ public class TestScanActivity extends AppCompatActivity implements QRCodeView.De
     private static final int REQUEST_CODE_CHOOSE_QRCODE_FROM_GALLERY = 666;
 
     private ZBarView mZBarView;
+    private TextView tv_num;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,7 @@ public class TestScanActivity extends AppCompatActivity implements QRCodeView.De
 
         mZBarView = findViewById(R.id.zbarview);
         mZBarView.setDelegate(this);
+        tv_num = findViewById(R.id.tv_num);
     }
 
     @Override
@@ -40,6 +43,9 @@ public class TestScanActivity extends AppCompatActivity implements QRCodeView.De
 //        mZBarView.startCamera(Camera.CameraInfo.CAMERA_FACING_FRONT); // 打开前置摄像头开始预览，但是并未开始识别
 
         mZBarView.startSpotAndShowRect(); // 显示扫描框，并开始识别
+
+        mZBarView.setType(BarcodeType.ONE_DIMENSION, null); // 只识别一维条码
+        mZBarView.hiddenScanRect(); // 隐藏扫描框
     }
 
     @Override
@@ -62,7 +68,8 @@ public class TestScanActivity extends AppCompatActivity implements QRCodeView.De
     @Override
     public void onScanQRCodeSuccess(String result) {
         Log.i(TAG, "result:" + result);
-        setTitle("扫描结果为：" + result);
+        //setTitle("扫描结果为：" + result);
+        tv_num.setText(String.valueOf(result));
         vibrate();
 
         mZBarView.startSpot(); // 开始识别
