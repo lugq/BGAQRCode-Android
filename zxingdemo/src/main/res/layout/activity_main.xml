@@ -15,4 +15,9 @@
         style="@style/MatchWrapTv"
         android:text="测试生成和识别图片二维码"/>
 
+    <TextView
+        android:id="@+id/test_load_pic"
+        style="@style/MatchWrapTv"
+        android:text="加载SD卡100张快递单"/>
+
 </LinearLayout>
